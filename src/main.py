@@ -1,5 +1,5 @@
 """
-This script performs 5-fold cross-validation on a list of pre-trained models using a given dataset.
+This script performs 3-fold cross-validation on a list of pre-trained models using a given dataset.
 It trains each model on a subset of the dataset and evaluates its performance on the validation set.
 The script outputs the accuracy, precision, recall, F1 score, and AUC score for each fold and the average
 and standard deviation of these metrics across all folds.
@@ -21,7 +21,7 @@ args = parser.parse_args()
 data_directory = args.dataset_path
 
 # Set hyperparameters
-epochs = 20
+epochs = 10
 batch_size = 64
 optimizer = "adam"
 loss = "binary_crossentropy"
@@ -54,13 +54,11 @@ pretrained_models = [
 ]
 
 # Load dataset using tf.keras.utils.image_dataset_from_directory
-train_dataset, test_dataset = tf.keras.utils.image_dataset_from_directory(
+train_dataset = tf.keras.utils.image_dataset_from_directory(
     data_directory,
     shuffle=True,
     batch_size=batch_size,
     image_size=(224, 224),
-    validation_split=0.3,
-    subset="both",
     seed=42,
     label_mode="binary",
 )
@@ -73,7 +71,7 @@ early_stopping = EarlyStopping(
 num_samples = len(train_dataset.file_paths)
 
 # Perform 5-fold cross-validation
-kf = KFold(n_splits=5, shuffle=True)
+kf = KFold(n_splits=3, shuffle=True)
 indices = np.arange(num_samples)
 output_file = "output.txt"
 
@@ -105,16 +103,16 @@ with open(output_file, "w") as f:
                 metrics=["accuracy", "precision", "recall", "auc"],
             )
             train_fold_dataset = None
-            for i in range(5):
+            for i in range(3):
                 if i != fold:
                     if train_fold_dataset == None:
                         train_fold_dataset = train_dataset.shard(num_shards=5, index=i)
                     else:
                         train_fold_dataset = train_fold_dataset.concatenate(
-                            train_dataset.shard(num_shards=5, index=i)
+                            train_dataset.shard(num_shards=3, index=i)
                         )
 
-            val_dataset = train_dataset.shard(num_shards=5, index=fold)
+            val_dataset = train_dataset.shard(num_shards=3, index=fold)
 
             # Train the model
             model.fit(
