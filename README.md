@@ -1,4 +1,4 @@
-# VIFDD-2024: Visual Intrusion and Fraud Detection Dataset
+# VIFDD: Visual Intrusion and Fraud Detection Dataset
 
 ## Overview
 
@@ -7,7 +7,7 @@ The Visual Intrusion and Fraud Detection Dataset (VIFDD-2024) is a comprehensive
 ## Directory Structure
 
 ```
-VIFDD-2024/
+VIFDD/
 |-- src/
 |   |-- main.py
 |   |-- requirements.txt
@@ -25,6 +25,7 @@ VIFDD-2024/
 ```
 
 ## Peek into the dataset
+![NEUR IPS 2024-VIFDD data viz](https://github.com/mldlusinkaggle/VIFDD/assets/171614320/38b0fd7a-d157-4645-8d24-6fde23d0f755)
 
 
 
