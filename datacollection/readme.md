@@ -1,6 +1,6 @@
 # README
 
-The `datacollection` folder in the VIFDD-2024 repository contains scripts and resources related to the data collection process. This includes capturing full-page screenshots of websites and uploading them to Azure Blob Storage. Below is a detailed guide on how to use the `screenshot.js` script and set up the necessary components.
+The `datacollection` folder in the VIFDD repository contains scripts and resources related to the data collection process. This includes capturing full-page screenshots of websites and uploading them to Azure Blob Storage. Below is a detailed guide on how to use the `screenshot.js` script and set up the necessary components.
 
 ## Screenshot.js
 
@@ -43,4 +43,5 @@ The script will iterate through the websites listed in the CSV file, capture ful
 *Note: Ensure that Puppeteer's `launch` method has the appropriate options for your environment, as it may vary based on your system configuration.*
 
 ### Data Collection Workflow
+![NEUR IPS 2024-VIFDD data collection](https://github.com/mldlusinkaggle/VIFDD/assets/171614320/21e42219-bc42-47e8-a7e5-05987fa19bac)
 
