@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Visual Intrusion and Fraud Detection Dataset (VIFDD-2024) is a comprehensive collection of visual data designed for research and development in the field of intrusion and fraud detection in web-based environments. This dataset includes a variety of normal and fraudulent visual samples gathered from diverse online sources.
+The Visual Intrusion and Fraud Detection Dataset (VIFDD) is a comprehensive collection of visual data designed for research and development in the field of intrusion and fraud detection in web-based environments. This dataset includes a variety of normal and fraudulent visual samples gathered from diverse online sources.
 
 ## Directory Structure
 
@@ -34,7 +34,7 @@ VIFDD/
 1. Clone the repository:
    ```bash
    git clone https://github.com/mldlusinkaggle/VIFDD
-   cd VIFDD-2024
+   cd VIFDD
    ```
 
 2. Install required packages:
